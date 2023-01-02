@@ -8,7 +8,11 @@
           <div class="mb-3 row">
             <label class="col-3 col-form-label">Nome:</label>
             <div class="col">
-              <input type="text" class="form-control" v-model.lazy="form.nome" />
+              <input
+                type="text"
+                class="form-control"
+                v-model.lazy="form.nome"
+              />
             </div>
           </div>
           <div class="mb-3 row">
@@ -30,7 +34,11 @@
           <div class="mb-3 row">
             <label class="col-3 col-form-label">Idade:</label>
             <div class="col">
-              <input type="number" class="form-control" v-model.number="form.idade" />
+              <input
+                type="number"
+                class="form-control"
+                v-model.number="form.idade"
+              />
             </div>
           </div>
           <div class="mb-3 row">
@@ -51,7 +59,13 @@
             <label class="col-3 col-form-label">Licença:</label>
             <div class="col">
               <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" />
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  v-model="form.licenca"
+                  true-value="SIM"
+                  false-value="NÃO"
+                />
                 <label class="form-check-label">Li e aceito os termos</label>
               </div>
             </div>
@@ -171,6 +185,7 @@
           <span>{{ form }}</span>
         </div>
 
+        <!-- SAÍDA DE DADOS -->
         <span class="fs-4">SAÍDA DE DADOS</span>
         <hr />
         <div class="mb-3 row">
@@ -189,7 +204,7 @@
           <span>Gênero:</span>
         </div>
         <div class="mb-3 row">
-          <span>Licença:</span>
+          <span>Licença: {{ form.licenca }}</span>
         </div>
         <div class="mb-3 row">
           <span>Interesses:</span>
@@ -238,6 +253,7 @@ export default {
       email: "",
       senha: "",
       idade: 0,
+      licenca: "NÃO",
     },
   }),
 };
