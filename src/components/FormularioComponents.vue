@@ -135,6 +135,54 @@
             </div>
           </div>
           <div class="mb-3 row">
+            <label class="col-3 col-form-label">CEP:</label>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                v-maska="'#####-###'"
+                v-model="form.cep"
+              />
+              <small class="text-muted">Formato: 00000-000</small>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-3 col-form-label">CPF:</label>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                v-maska="'###.###.###-##'"
+                v-model="form.cpf"
+              />
+              <small class="text-muted">Formato: 000.000.000-00</small>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-3 col-form-label">CNPJ:</label>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                v-maska="'##.###.###/####-##'"
+                v-model="form.cnpj"
+              />
+              <small class="text-muted">Formato: 00.000.000/0000-00</small>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-3 col-form-label">Catão de Crédito:</label>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                v-maska="'#### #### #### ####'"
+                v-model="form.cartaoDeCredito"
+              />
+              <small class="text-muted">Formato: 0000 0000 0000 0000</small>
+            </div>
+          </div>
+          <div class="mb-3 row">
             <label class="col-3 col-form-label">Data:</label>
             <div class="col">
               <input type="date" class="form-control" />
@@ -249,6 +297,18 @@
           <span>Telefone: {{ form.telefone }}</span>
         </div>
         <div class="mb-3 row">
+          <span>CEP: {{ form.cep }}</span>
+        </div>
+        <div class="mb-3 row">
+          <span>CPF: {{ form.cpf }}</span>
+        </div>
+        <div class="mb-3 row">
+          <span>CNPJ: {{ form.cnpj }}</span>
+        </div>
+        <div class="mb-3 row">
+          <span>Cartão de Crédito: {{ form.cartaoDeCredito }}</span>
+        </div>
+        <div class="mb-3 row">
           <span>Data:</span>
         </div>
         <div class="mb-3 row">
@@ -293,6 +353,10 @@ export default {
       interesses: [],
       genero: "",
       telefone: "",
+      cep: "",
+      cpf: "",
+      cnpj: "",
+      cartaoDeCredito: "",
     },
   }),
 };
