@@ -45,11 +45,21 @@
             <label class="col-3 col-form-label">Gênero:</label>
             <div class="col">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" />
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="Feminino"
+                  v-model="form.genero"
+                />
                 <label class="form-check-label"> Feminino </label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" />
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="Masculino"
+                  v-model="form.genero"
+                />
                 <label class="form-check-label"> Masculino </label>
               </div>
             </div>
@@ -221,7 +231,7 @@
           <span>Idade: {{ form.idade }}</span>
         </div>
         <div class="mb-3 row">
-          <span>Gênero:</span>
+          <span>Gênero: {{ form.genero }}</span>
         </div>
         <div class="mb-3 row">
           <span>Licença: {{ form.licenca }}</span>
@@ -280,6 +290,7 @@ export default {
       idade: 0,
       licenca: "NÃO",
       interesses: [],
+      genero: "",
     },
   }),
 };
