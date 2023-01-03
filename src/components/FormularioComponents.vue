@@ -171,7 +171,7 @@
             </div>
           </div>
           <div class="mb-3 row">
-            <label class="col-3 col-form-label">Catão de Crédito:</label>
+            <label class="col-3 col-form-label">Cartão de Crédito:</label>
             <div class="col">
               <input
                 type="text"
@@ -274,13 +274,22 @@
           <div class="mb-3 row">
             <label class="col-3 col-form-label">Escondido:</label>
             <div class="col">
-              <input type="hidden" class="form-control" />
+              <input
+                type="hidden"
+                class="form-control"
+                v-model="form.escondido"
+              />
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-3 col-form-label">Upload:</label>
             <div class="col">
-              <input type="file" class="form-control" />
+              <input
+                type="file"
+                class="form-control"
+                multiple
+                @change="selecionarArquivos($event)"
+              />
             </div>
           </div>
           <hr />
@@ -399,10 +408,15 @@
           <span>Valor limite: {{ form.alcance }}</span>
         </div>
         <div class="mb-3 row">
-          <span>Escondido:</span>
+          <span>Escondido: {{ form.escondido }}</span>
         </div>
         <div class="mb-3 row">
           <span>Upload:</span>
+          <ul>
+            <li v-for="(arquivo, idx) in form.arquivos" :key="idx">
+              {{ arquivo.name }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -436,7 +450,14 @@ export default {
       hora: "",
       cor: "",
       alcance: 5,
+      escondido: "Oculto",
+      arquivos: {},
     },
   }),
+  methods: {
+    selecionarArquivos(event) {
+      this.form.arquivos = event.target.files;
+    },
+  },
 };
 </script>
