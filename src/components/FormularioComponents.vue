@@ -365,6 +365,19 @@
         </div>
         <div class="mb-3 row">
           <span>Data/hora local: {{ form.dataHoraLocal }}</span>
+          <ul>
+            <li>{{ $moment(form.dataHoraLocal).format("dddd") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).add(10, "days") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).add(1, "months") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).add(2, "years") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).subtract(10, "days") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).subtract(1, "months") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).subtract(2, "years") }}</li>
+            <li>{{ $moment(form.dataHoraLocal).format("LLLL") }}</li>
+            <li>
+              {{ $moment(form.dataHoraLocal).add(10, "days").format("LLLL") }}
+            </li>
+          </ul>
         </div>
         <div class="mb-3 row">
           <span>Mês: {{ form.mes }}</span>
@@ -418,6 +431,6 @@ export default {
       semana: "",
       hora: "",
     },
-  })
+  }),
 };
 </script>

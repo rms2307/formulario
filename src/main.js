@@ -7,5 +7,6 @@ const app  = createApp(App)
 
 app.use(Maska)
 app.config.globalProperties.$moment = moment
+app.config.globalProperties.$moment.locale('pt-br')
 
 app.mount('#app')
