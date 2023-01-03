@@ -292,6 +292,16 @@
               />
             </div>
           </div>
+          <div class="mb-3 row">
+            <label class="col-3 col-form-label">Descrição:</label>
+            <div class="col">
+              <textarea
+                class="form-control"
+                rows="3"
+                v-model="form.descricao"
+              ></textarea>
+            </div>
+          </div>
           <hr />
           <div class="mb-3 row">
             <div class="col d-flex justify-content-between">
@@ -418,6 +428,11 @@
             </li>
           </ul>
         </div>
+        <div class="mb-3 row">
+          <span>Descrição:</span>
+          <!-- <pre>{{ form.descricao }}</pre> -->
+          <div style="white-space: pre">{{ form.descricao }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -448,10 +463,11 @@ export default {
       mes: "",
       semana: "",
       hora: "",
-      cor: "",
+      cor: "#6c757d",
       alcance: 5,
       escondido: "Oculto",
       arquivos: {},
+      descricao: "",
     },
   }),
   methods: {
