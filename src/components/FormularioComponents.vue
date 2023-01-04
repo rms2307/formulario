@@ -4,7 +4,7 @@
       <div class="col-6 bg-light">
         <span class="fs-4">ENTRADA DE DADOS</span>
         <hr />
-        <form>
+        <form @reset.prevent="resetar()">
           <div class="mb-3 row">
             <label class="col-3 col-form-label">Nome:</label>
             <div class="col">
@@ -466,13 +466,14 @@ export default {
       { id: 3, nome: "Curso completo de Vue" },
       { id: 4, nome: "Curso completo de JS" },
     ],
-    form: {
-      nome: "",
-      email: "",
+    form: {},
+    formInicial: {
+      nome: "Nome Padrão",
+      email: "email@email.com",
       senha: "",
       idade: 0,
       licenca: "NÃO",
-      interesses: [],
+      interesses: ["VueJS"],
       genero: "",
       telefone: "",
       cep: "",
@@ -495,9 +496,15 @@ export default {
       curso: "",
     },
   }),
+  created() {
+    this.resetar();
+  },
   methods: {
     selecionarArquivos(event) {
       this.form.arquivos = event.target.files;
+    },
+    resetar() {
+      this.form = Object.assign({}, this.formInicial);
     },
   },
 };
