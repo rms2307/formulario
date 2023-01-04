@@ -1,14 +1,14 @@
 <template>
-  <formulario-components />
+  <formulario-cadastro />
 </template>
 
 <script>
-import FormularioComponents from "./components/FormularioComponents.vue";
+import FormularioCadastro from "./components/FormularioCadastro.vue";
 
 export default {
   name: "App",
   components: {
-    FormularioComponents,
+    FormularioCadastro,
   },
 };
 </script>

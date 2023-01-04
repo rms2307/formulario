@@ -458,7 +458,7 @@
 
 <script>
 export default {
-  name: "FormularioComponents",
+  name: "FormularioCadastro",
   data: () => ({
     cursos: [
       { id: 1, nome: "Banco de dados" },
