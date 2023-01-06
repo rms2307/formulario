@@ -293,6 +293,19 @@
             </div>
           </div>
           <div class="mb-3 row">
+            <label class="col-3 col-form-label">Avaliação:</label>
+            <div class="col">
+              <!-- <input-estrelas
+                :numeroEstrelas="5"
+                @avaliar="form.avaliacao = $event"
+              /> -->
+              <input-estrelas
+                :numeroEstrelas="5"
+                v-model:avaliar="form.avaliacao"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
             <label class="col-3 col-form-label">Descrição:</label>
             <div class="col">
               <textarea
@@ -444,6 +457,9 @@
           </ul>
         </div>
         <div class="mb-3 row">
+          <span>Avaliação: {{ form.avaliacao }}</span>
+        </div>
+        <div class="mb-3 row">
           <span>Descrição:</span>
           <!-- <pre>{{ form.descricao }}</pre> -->
           <div style="white-space: pre">{{ form.descricao }}</div>
@@ -457,8 +473,13 @@
 </template>
 
 <script>
+import InputEstrelas from "../components/InputEstrelas.vue";
+
 export default {
   name: "FormularioCadastro",
+  components: {
+    InputEstrelas,
+  },
   data: () => ({
     cursos: [
       { id: 1, nome: "Banco de dados" },
@@ -494,6 +515,7 @@ export default {
       arquivos: {},
       descricao: "",
       curso: "",
+      avaliacao: "",
     },
   }),
   created() {
